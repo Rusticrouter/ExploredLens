@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio · Blanchette Photography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <nav>
+        <div class="logo">Blanchette Photo</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="prints.html">Prints</a></li>
+          <li><a href="book.html">Book a Session</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <h2>Portraits</h2>
+        <p>Modern, natural-light portraits for families, couples, and individuals.</p>
+        <div class="grid">
+          <img src="img/portrait-1.jpg" alt="Portrait 1" />
+          <img src="img/portrait-2.jpg" alt="Portrait 2" />
+          <img src="img/portrait-3.jpg" alt="Portrait 3" />
+          <img src="img/portrait-4.jpg" alt="Portrait 4" />
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Families & Lifestyle</h2>
+        <p>Candid, relaxed sessions that feel like real life, not a photo shoot.</p>
+        <div class="grid">
+          <img src="img/family-1.jpg" alt="Family 1" />
+          <img src="img/family-2.jpg" alt="Family 2" />
+          <img src="img/family-3.jpg" alt="Family 3" />
+          <img src="img/family-4.jpg" alt="Family 4" />
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Landscapes & Wildlife</h2>
+        <p>New England mountains, coastlines, and the wild things that live between.</p>
+        <div class="grid">
+          <img src="img/landscape-1.jpg" alt="Landscape 1" />
+          <img src="img/landscape-2.jpg" alt="Landscape 2" />
+          <img src="img/wildlife-1.jpg" alt="Wildlife 1" />
+          <img src="img/wildlife-2.jpg" alt="Wildlife 2" />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Blanchette Photography
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

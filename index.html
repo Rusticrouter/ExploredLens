@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blanchette Photography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <nav>
+        <div class="logo">Blanchette Photo</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="prints.html">Prints</a></li>
+          <li><a href="book.html">Book a Session</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Outdoor portraits & wild New England light.</h1>
+          <p>
+            Natural-light photography by Craig Blanchette. Honest portraits,
+            wild landscapes, and the little in-between moments that actually feel like you.
+          </p>
+          <div class="hero-buttons">
+            <a href="book.html" class="btn btn-primary">Book a Session</a>
+            <a href="portfolio.html" class="btn btn-ghost">View Portfolio</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <!-- Replace hero.jpg with one of your shots -->
+          <img src="img/hero.jpg" alt="Outdoor portrait at sunset" />
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Featured Work</h2>
+        <p>A small selection of recent portraits, families, and adventures.</p>
+        <div class="grid">
+          <img src="img/portrait-1.jpg" alt="Portrait 1" />
+          <img src="img/portrait-2.jpg" alt="Portrait 2" />
+          <img src="img/wildlife-1.jpg" alt="Wildlife 1" />
+          <img src="img/landscape-1.jpg" alt="Landscape 1" />
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <h2>Sessions & Prints</h2>
+          <p>
+            Ready to update family photos, celebrate a milestone, or hang some New England
+            landscape prints on your wall?
+          </p>
+          <div class="hero-buttons">
+            <a href="book.html" class="btn btn-primary">Schedule a Shoot</a>
+            <a href="prints.html" class="btn btn-ghost">Shop Prints</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Blanchette Photography · Southern NH
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

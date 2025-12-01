@@ -9,13 +9,20 @@
 <body>
   <div class="wrapper">
     <header>
-      <nav>
+      <nav class="site-nav">
         <div class="logo">Blanchette Photo</div>
-        <ul>
+
+        <!-- Mobile menu toggle -->
+        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+          ☰
+        </button>
+
+        <!-- Nav links -->
+        <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="prints.html">Prints</a></li>
-          <li><a href="book.html">Book a Session</a></li>
+          <li><a href="book.html">Book</a></li>
         </ul>
       </nav>
     </header>
@@ -24,30 +31,71 @@
       <section class="section">
         <h2>Book a Session</h2>
         <p>
-          Portraits, families, engagements, and outdoor sessions around southern New Hampshire
-          and New England. Choose a time that works and we’ll dial in the details together.
+          Please fill out the form below to inquire about portrait sessions, wildlife print orders,
+          collaborations, or general questions. I’ll get back to you as soon as possible.
         </p>
       </section>
 
       <section class="section">
-        <!-- Calendly inline embed -->
-        <div class="card" style="padding: 0;">
-          <div class="calendly-inline-widget"
-               data-url="https://calendly.com/your-username/your-session-type"
-               style="min-width: 320px; height: 700px;"></div>
+        <div class="card">
+          <form 
+            action="YOUR_FORMSPREE_ENDPOINT_HERE"
+            method="POST"
+            class="contact-form">
+
+            <label>
+              Full Name
+              <input type="text" name="name" required>
+            </label>
+
+            <label>
+              Email Address
+              <input type="email" name="email" required>
+            </label>
+
+            <label>
+              Phone Number (optional)
+              <input type="text" name="phone">
+            </label>
+
+            <label>
+              What are you looking for?
+              <select name="session_type" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Family Portraits">Family Portraits</option>
+                <option value="Couples / Engagement">Couples / Engagement</option>
+                <option value="Individual Portraits">Individual Portraits</option>
+                <option value="Wildlife / Birding Prints">Wildlife / Birding Prints</option>
+                <option value="Collaboration">Collaboration</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+
+            <label>
+              Message
+              <textarea name="message" rows="6" required></textarea>
+            </label>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
         </div>
       </section>
     </main>
 
     <footer>
-      &copy; <span id="year"></span> Blanchette Photography
+      &copy; <span id="year"></span> ExploredLens Photography | Seacoast, New Hampshire
     </footer>
   </div>
 
-  <!-- Calendly script -->
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <!-- Mobile nav JS + Year -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('nav-open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
   </script>
 </body>
 </html>

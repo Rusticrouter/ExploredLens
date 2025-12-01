@@ -27,12 +27,13 @@ header {
   margin-bottom: 2rem;
 }
 
-nav {
+.site-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Logo */
 .logo {
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -41,21 +42,31 @@ nav {
   color: #000;
 }
 
-nav ul {
+/* Links container (desktop default) */
+.nav-links {
   display: flex;
   gap: 1.5rem;
   list-style: none;
 }
 
-nav a {
+.nav-links a {
   text-decoration: none;
   color: #444;
   font-weight: 500;
   transition: 0.2s ease;
 }
 
-nav a:hover {
+.nav-links a:hover {
   color: #000;
+}
+
+/* Mobile menu toggle button */
+.nav-toggle {
+  display: none; /* hidden on desktop */
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
 }
 
 /* HERO ------------------------------------------------------------------ */
@@ -76,15 +87,18 @@ nav a:hover {
 }
 
 .hero-text p {
-  font-size: 1.1rem;
-  opacity: 0.8;
+  font-size: 1.05rem;
+  opacity: 0.85;
   margin-bottom: 1.75rem;
 }
 
 .hero-buttons {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
+
+/* Buttons --------------------------------------------------------------- */
 
 .btn {
   padding: 0.75rem 1.4rem;
@@ -116,6 +130,8 @@ nav a:hover {
   background: #f4f4f4;
 }
 
+/* Hero image ------------------------------------------------------------ */
+
 .hero-image {
   border-radius: 1rem;
   overflow: hidden;
@@ -142,7 +158,7 @@ nav a:hover {
 
 .section p {
   font-size: 1rem;
-  opacity: 0.75;
+  opacity: 0.8;
   margin-bottom: 1.5rem;
 }
 
@@ -169,7 +185,7 @@ nav a:hover {
   box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.15);
 }
 
-/* CARD (used on Prints / Booking pages) -------------------------------- */
+/* CARD (Sessions & Prints) --------------------------------------------- */
 
 .card {
   padding: 1.75rem;
@@ -202,8 +218,37 @@ footer {
   .hero {
     grid-template-columns: 1fr;
   }
+}
 
-  nav ul {
-    gap: 1rem;
+/* MOBILE NAV ------------------------------------------------------------ */
+
+@media (max-width: 768px) {
+  /* Show hamburger on mobile */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* Hide links by default on mobile, show as dropdown */
+  .nav-links {
+    position: absolute;
+    top: 64px; /* adjust if header height changes */
+    right: 1.5rem;
+    background: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    padding: 0.75rem 1rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.75rem;
+    z-index: 50;
+  }
+
+  .nav-links a {
+    color: #222;
+  }
+
+  /* When toggled open */
+  .nav-links.nav-open {
+    display: flex;
   }
 }

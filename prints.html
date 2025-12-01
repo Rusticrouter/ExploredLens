@@ -9,13 +9,20 @@
 <body>
   <div class="wrapper">
     <header>
-      <nav>
+      <nav class="site-nav">
         <div class="logo">Blanchette Photo</div>
-        <ul>
+
+        <!-- Mobile menu toggle button -->
+        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+          ☰
+        </button>
+
+        <!-- Nav links -->
+        <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="prints.html">Prints</a></li>
-          <li><a href="book.html">Book a Session</a></li>
+          <li><a href="book.html">Book</a></li>
         </ul>
       </nav>
     </header>
@@ -24,8 +31,8 @@
       <section class="section">
         <h2>Fine Art Prints</h2>
         <p>
-          Museum-quality prints of my favorite New England landscapes and wildlife.
-          Each piece is printed to order on archival paper or metal.
+          Museum-quality prints of my favorite landscapes and wildlife.  
+          Each print is produced to order on archival paper or premium metal.
         </p>
       </section>
 
@@ -75,9 +82,8 @@
 
       <section class="section">
         <p>
-          Looking for a specific image you saw on Instagram or want a different size?
-          <br />
-          Shoot me an email at <a href="mailto:youremail@example.com">youremail@example.com</a>.
+          Looking for a specific image or custom sizes?<br>
+          Reach me at <a href="mailto:youremail@example.com">youremail@example.com</a>.
         </p>
       </section>
     </main>
@@ -88,7 +94,17 @@
   </div>
 
   <script>
+    // Set current year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('nav-open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
   </script>
 </body>
 </html>

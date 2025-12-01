@@ -2,20 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Portfolio · Blanchette Photography</title>
+  <title>Portfolio · ExploredLens Photography</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="wrapper">
     <header>
-      <nav>
+      <nav class="site-nav">
         <div class="logo">Blanchette Photo</div>
-        <ul>
+
+        <!-- Mobile toggle button -->
+        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+          ☰
+        </button>
+
+        <!-- Nav links -->
+        <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="prints.html">Prints</a></li>
-          <li><a href="book.html">Book a Session</a></li>
+          <li><a href="book.html">Book</a></li>
         </ul>
       </nav>
     </header>
@@ -33,7 +40,7 @@
       </section>
 
       <section class="section">
-        <h2>Families & Lifestyle</h2>
+        <h2>Wildlife</h2>
         <p>Candid, relaxed sessions that feel like real life, not a photo shoot.</p>
         <div class="grid">
           <img src="img/family-1.jpg" alt="Family 1" />
@@ -44,7 +51,7 @@
       </section>
 
       <section class="section">
-        <h2>Landscapes & Wildlife</h2>
+        <h2>Landscapes</h2>
         <p>New England mountains, coastlines, and the wild things that live between.</p>
         <div class="grid">
           <img src="img/landscape-1.jpg" alt="Landscape 1" />
@@ -56,12 +63,22 @@
     </main>
 
     <footer>
-      &copy; <span id="year"></span> Blanchette Photography
+      &copy; <span id="year"></span> ExploredLens Photography | Seacoast, NH
     </footer>
   </div>
 
   <script>
+    // Set current year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('nav-open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
   </script>
 </body>
 </html>

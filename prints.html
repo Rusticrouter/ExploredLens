@@ -41,15 +41,19 @@
 
           <!-- Print 1 -->
           <div class="card">
-            <img src="img/shortie.jpg"
-                 alt="Framed Short-Eared Owl fine art print"
-                 class="print-img" />
+            <img
+              src="img/shortie.jpg"
+              alt="Framed Short-Eared Owl fine art print"
+              class="print-img"
+            />
             <h3>Short-Eared Owl · 13×19</h3>
             <p>Archival matte paper · Signed · Limited run.</p>
             <div class="hero-buttons">
-              <a href="https://buy.stripe.com/aFa28q82eczI7L83wNfnO00"
-                 target="_blank"
-                 class="btn btn-primary">
+              <a
+                href="https://buy.stripe.com/aFa28q82eczI7L83wNfnO00"
+                target="_blank"
+                class="btn btn-primary"
+              >
                 Buy Print
               </a>
             </div>
@@ -57,15 +61,19 @@
 
           <!-- Print 2 -->
           <div class="card">
-            <img src="img/screech.jpg"
-                 alt="Framed Eastern Screech Owl fine art print"
-                 class="print-img" />
+            <img
+              src="img/screech.jpg"
+              alt="Framed Eastern Screech Owl fine art print"
+              class="print-img"
+            />
             <h3>Eastern Screech Owl · 13×19</h3>
             <p>Archival matte paper · Signed · Limited run.</p>
             <div class="hero-buttons">
-              <a href="https://buy.stripe.com/dRmdR8ciuarAe9w1oFfnO01"
-                 target="_blank"
-                 class="btn btn-primary">
+              <a
+                href="https://buy.stripe.com/dRmdR8ciuarAe9w1oFfnO01"
+                target="_blank"
+                class="btn btn-primary"
+              >
                 Buy Print
               </a>
             </div>
@@ -73,24 +81,25 @@
 
           <!-- Print 3 -->
           <div class="card">
-            <img src="img/redtail.jpg"
-                 alt="Framed Red Tail Hawk fine art print"
-                 class="print-img" />
+            <img
+              src="img/redtail.jpg"
+              alt="Framed Red Tail Hawk fine art print"
+              class="print-img"
+            />
             <h3>Red Tail Hawk · 13×19</h3>
             <p>Archival matte paper · Signed · Limited run.</p>
             <div class="hero-buttons">
-              <a href="https://buy.stripe.com/fZu00i1DQ0R01mKc3jfnO02"
-                 target="_blank"
-                 class="btn btn-primary">
+              <a
+                href="https://buy.stripe.com/fZu00i1DQ0R01mKc3jfnO02"
+                target="_blank"
+                class="btn btn-primary"
+              >
                 Buy Print
               </a>
             </div>
           </div>
 
         </div>
-      </section>
-
-      <section class="section">
       </section>
     </main>
 
@@ -99,18 +108,60 @@
     </footer>
   </div>
 
+  <!-- Lightbox overlay for full-screen image view -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+  </div>
+
   <script>
     // Set current year
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // Mobile nav toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
 
-    navToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('nav-open');
-      navToggle.setAttribute('aria-expanded', isOpen);
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("nav-open");
+      navToggle.setAttribute("aria-expanded", isOpen);
     });
+
+    // ---------- Lightbox logic ----------
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    // Open lightbox on print image click
+    document.querySelectorAll(".print-img").forEach((img) => {
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden"; // prevent background scroll
+      });
+    });
+
+    // Close when clicking the dark background
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("open")) {
+        closeLightbox();
+      }
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
   </script>
 </body>
 </html>

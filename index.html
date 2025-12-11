@@ -21,6 +21,32 @@
     gtag('js', new Date());
     gtag('config', 'G-QC2S9YYN9E');
   </script>
+
+  <style>
+    /* FULLSCREEN LIGHTBOX */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      cursor: zoom-out;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 95%;
+      max-height: 95%;
+      border-radius: 10px;
+      object-fit: contain;
+      box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    }
+  </style>
 </head>
 
 <body>
@@ -57,7 +83,7 @@
           </div>
         </div>
         <div class="hero-image">
-          <img src="img/logo.jpeg" alt="Outdoor portrait" />
+          <img src="img/logo.jpeg" alt="Outdoor portrait" class="zoom-img" />
         </div>
       </section>
 
@@ -65,10 +91,10 @@
         <h2>Featured Work</h2>
         <p>A glimpse into some recent work captured on location.</p>
         <div class="grid">
-          <img src="img/colt.jpg" alt="Portrait 1" />
-          <img src="img/liz.jpg" alt="Portrait 2" />
-          <img src="img/barred_owl.jpg" alt="Wildlife 1" />
-          <img src="img/forest.jpg" alt="Landscape 1" />
+          <img src="img/colt.jpg" alt="Portrait 1" class="zoom-img" />
+          <img src="img/liz.jpg" alt="Portrait 2" class="zoom-img" />
+          <img src="img/barred_owl.jpg" alt="Wildlife 1" class="zoom-img" />
+          <img src="img/forest.jpg" alt="Landscape 1" class="zoom-img" />
         </div>
       </section>
 
@@ -76,7 +102,8 @@
         <div class="card">
           <h2>Sessions &amp; Prints</h2>
           <p>
-            From heirloom-level family portrait sessions to stunning fine-art wildlife and landscape prints, I create imagery with depth, detail, and an eye for the extraordinary.
+            From heirloom-level family portrait sessions to stunning fine-art wildlife and landscape prints,
+            I create imagery with depth, detail, and an eye for the extraordinary.
           </p>
           <div class="hero-buttons">
             <a href="book.html" class="btn btn-primary">Schedule a Shoot</a>
@@ -91,6 +118,11 @@
     </footer>
   </div>
 
+  <!-- FULLSCREEN LIGHTBOX -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
   <script>
     // Set current year
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -98,11 +130,4 @@
     // Mobile nav toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
-
-    navToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('nav-open');
-      navToggle.setAttribute('aria-expanded', isOpen);
-    });
-  </script>
-</body>
-</html>
+    navToggle.add

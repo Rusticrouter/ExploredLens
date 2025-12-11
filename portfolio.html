@@ -71,38 +71,68 @@
     </header>
 
     <main>
+
+      <!-- PORTRAITS ---------------------------------------------------- -->
       <section class="section">
         <h2>Portraits</h2>
         <p>Modern, natural-light portraits for families, couples, and individuals.</p>
+
         <div class="grid">
-          <img src="img/maternity1.jpg" alt="Portrait 1" class="zoom-img" />
-          <img src="img/amac.jpg" alt="Portrait 2" class="zoom-img" />
-          <img src="img/nick1.jpg" alt="Portrait 3" class="zoom-img" />
-          <img src="img/maternity2.jpg" alt="Portrait 4" class="zoom-img" />
+          <!-- Existing 4 -->
+          <img src="img/maternity1.jpg" class="zoom-img" alt="Portrait 1" />
+          <img src="img/amac.jpg" class="zoom-img" alt="Portrait 2" />
+          <img src="img/nick1.jpg" class="zoom-img" alt="Portrait 3" />
+          <img src="img/maternity2.jpg" class="zoom-img" alt="Portrait 4" />
+
+          <!-- NEW Portraits (Replace filenames) -->
+          <img src="img/portrait5.jpg" class="zoom-img" alt="Portrait 5" />
+          <img src="img/portrait6.jpg" class="zoom-img" alt="Portrait 6" />
+          <img src="img/portrait7.jpg" class="zoom-img" alt="Portrait 7" />
+          <img src="img/portrait8.jpg" class="zoom-img" alt="Portrait 8" />
+          <img src="img/portrait9.jpg" class="zoom-img" alt="Portrait 9" />
+          <img src="img/portrait10.jpg" class="zoom-img" alt="Portrait 10" />
+          <img src="img/portrait11.jpg" class="zoom-img" alt="Portrait 11" />
+          <img src="img/portrait12.jpg" class="zoom-img" alt="Portrait 12" />
         </div>
       </section>
 
+      <!-- WILDLIFE ----------------------------------------------------- -->
       <section class="section">
         <h2>Wildlife</h2>
         <p>A tribute to the wild places and the creatures that define them.</p>
+
         <div class="grid">
-          <img src="img/whiteeye.jpg" alt="Family 1" class="zoom-img" />
-          <img src="img/shortie.jpg" alt="Family 2" class="zoom-img" />
-          <img src="img/wren.jpg" alt="Family 3" class="zoom-img" />
-          <img src="img/redtail.jpg" alt="Family 4" class="zoom-img" />
+          <!-- Existing 4 -->
+          <img src="img/whiteeye.jpg" class="zoom-img" alt="Wildlife 1" />
+          <img src="img/shortie.jpg" class="zoom-img" alt="Wildlife 2" />
+          <img src="img/wren.jpg" class="zoom-img" alt="Wildlife 3" />
+          <img src="img/redtail.jpg" class="zoom-img" alt="Wildlife 4" />
+
+          <!-- NEW Wildlife (Replace filenames) -->
+          <img src="img/wildlife5.jpg" class="zoom-img" alt="Wildlife 5" />
+          <img src="img/wildlife6.jpg" class="zoom-img" alt="Wildlife 6" />
+          <img src="img/wildlife7.jpg" class="zoom-img" alt="Wildlife 7" />
+          <img src="img/wildlife8.jpg" class="zoom-img" alt="Wildlife 8" />
+          <img src="img/wildlife9.jpg" class="zoom-img" alt="Wildlife 9" />
+          <img src="img/wildlife10.jpg" class="zoom-img" alt="Wildlife 10" />
+          <img src="img/wildlife11.jpg" class="zoom-img" alt="Wildlife 11" />
+          <img src="img/wildlife12.jpg" class="zoom-img" alt="Wildlife 12" />
         </div>
       </section>
 
+      <!-- LANDSCAPES --------------------------------------------------- -->
       <section class="section">
         <h2>Landscapes</h2>
         <p>Celebrating the scapes that shape us, from wild horizons to architectural design.</p>
+
         <div class="grid">
-          <img src="img/Sligo.jpg" alt="Landscape 1" class="zoom-img" />
-          <img src="img/abbey.jpg" alt="Landscape 2" class="zoom-img" />
-          <img src="img/moon.jpg" alt="Wildlife 1" class="zoom-img" />
-          <img src="img/river.jpg" alt="Wildlife 2" class="zoom-img" />
+          <img src="img/Sligo.jpg" class="zoom-img" alt="Landscape 1" />
+          <img src="img/abbey.jpg" class="zoom-img" alt="Landscape 2" />
+          <img src="img/moon.jpg" class="zoom-img" alt="Landscape 3" />
+          <img src="img/river.jpg" class="zoom-img" alt="Landscape 4" />
         </div>
       </section>
+
     </main>
 
     <footer>
@@ -111,7 +141,7 @@
   </div>
 
   <!-- FULLSCREEN LIGHTBOX -->
-  <div id="lightbox" class="lightbox" aria-hidden="true">
+  <div id="lightbox" class="lightbox">
     <img id="lightbox-img" src="" alt="" />
   </div>
 
@@ -127,7 +157,7 @@
       navToggle.setAttribute('aria-expanded', isOpen);
     });
 
-    // Fullscreen Lightbox Logic
+    // Lightbox Logic
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
 
@@ -139,13 +169,11 @@
       });
     });
 
-    // Close when clicking background
     lightbox.addEventListener("click", () => {
       lightbox.classList.remove("open");
       document.body.style.overflow = "";
     });
 
-    // ESC to close
     document.addEventListener("keydown", e => {
       if (e.key === "Escape") {
         lightbox.classList.remove("open");
@@ -153,5 +181,6 @@
       }
     });
   </script>
+
 </body>
 </html>

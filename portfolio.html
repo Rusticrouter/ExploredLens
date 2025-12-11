@@ -21,6 +21,32 @@
     gtag('js', new Date());
     gtag('config', 'G-QC2S9YYN9E');
   </script>
+
+  <style>
+    /* FULLSCREEN LIGHTBOX */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      cursor: zoom-out;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 95%;
+      max-height: 95%;
+      border-radius: 8px;
+      object-fit: contain;
+      box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    }
+  </style>
 </head>
 
 <body>
@@ -49,10 +75,10 @@
         <h2>Portraits</h2>
         <p>Modern, natural-light portraits for families, couples, and individuals.</p>
         <div class="grid">
-          <img src="img/maternity1.jpg" alt="Portrait 1" />
-          <img src="img/amac.jpg" alt="Portrait 2" />
-          <img src="img/nick1.jpg" alt="Portrait 3" />
-          <img src="img/maternity2.jpg" alt="Portrait 4" />
+          <img src="img/maternity1.jpg" alt="Portrait 1" class="zoom-img" />
+          <img src="img/amac.jpg" alt="Portrait 2" class="zoom-img" />
+          <img src="img/nick1.jpg" alt="Portrait 3" class="zoom-img" />
+          <img src="img/maternity2.jpg" alt="Portrait 4" class="zoom-img" />
         </div>
       </section>
 
@@ -60,10 +86,10 @@
         <h2>Wildlife</h2>
         <p>A tribute to the wild places and the creatures that define them.</p>
         <div class="grid">
-          <img src="img/whiteeye.jpg" alt="Family 1" />
-          <img src="img/shortie.jpg" alt="Family 2" />
-          <img src="img/wren.jpg" alt="Family 3" />
-          <img src="img/redtail.jpg" alt="Family 4" />
+          <img src="img/whiteeye.jpg" alt="Family 1" class="zoom-img" />
+          <img src="img/shortie.jpg" alt="Family 2" class="zoom-img" />
+          <img src="img/wren.jpg" alt="Family 3" class="zoom-img" />
+          <img src="img/redtail.jpg" alt="Family 4" class="zoom-img" />
         </div>
       </section>
 
@@ -71,10 +97,10 @@
         <h2>Landscapes</h2>
         <p>Celebrating the scapes that shape us, from wild horizons to architectural design.</p>
         <div class="grid">
-          <img src="img/Sligo.jpg" alt="Landscape 1" />
-          <img src="img/abbey.jpg" alt="Landscape 2" />
-          <img src="img/moon.jpg" alt="Wildlife 1" />
-          <img src="img/river.jpg" alt="Wildlife 2" />
+          <img src="img/Sligo.jpg" alt="Landscape 1" class="zoom-img" />
+          <img src="img/abbey.jpg" alt="Landscape 2" class="zoom-img" />
+          <img src="img/moon.jpg" alt="Wildlife 1" class="zoom-img" />
+          <img src="img/river.jpg" alt="Wildlife 2" class="zoom-img" />
         </div>
       </section>
     </main>
@@ -84,17 +110,47 @@
     </footer>
   </div>
 
+  <!-- FULLSCREEN LIGHTBOX -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
   <script>
-    // Set current year
+    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // Mobile nav toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
-
     navToggle.addEventListener('click', () => {
       const isOpen = navLinks.classList.toggle('nav-open');
       navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Fullscreen Lightbox Logic
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    document.querySelectorAll(".zoom-img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add("open");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    // Close when clicking background
+    lightbox.addEventListener("click", () => {
+      lightbox.classList.remove("open");
+      document.body.style.overflow = "";
+    });
+
+    // ESC to close
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        lightbox.classList.remove("open");
+        document.body.style.overflow = "";
+      }
     });
   </script>
 </body>

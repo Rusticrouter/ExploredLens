@@ -39,6 +39,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="prints.html">Prints</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="book.html">Book</a></li>
         </ul>
       </nav>
@@ -48,8 +49,8 @@
       <section class="section">
         <h2>Book a Session</h2>
         <p>
-          Please fill out the form below to inquire about portrait sessions, wildlife print orders,
-          collaborations, or general questions. I’ll get back to you as soon as possible.
+          Interested in a photography session or fine-art prints?
+          Fill out the form below and I’ll get back to you as soon as possible.
         </p>
       </section>
 
@@ -76,21 +77,21 @@
             </label>
 
             <label>
-              What are you looking for?
+              What are you interested in?
               <select name="session_type" required>
                 <option value="" disabled selected>Select an option</option>
-                <option value="Family Portraits">Family Portraits</option>
-                <option value="Couples / Engagement">Couples / Engagement</option>
-                <option value="Individual Portraits">Individual Portraits</option>
-                <option value="Wildlife / Birding Prints">Wildlife / Birding Prints</option>
-                <option value="Collaboration">Collaboration</option>
+                <option value="Families">Families</option>
+                <option value="Couples">Couples</option>
+                <option value="Engagement">Engagement</option>
+                <option value="Headshots">Headshots</option>
+                <option value="Fine Art Prints">Fine Art Prints</option>
                 <option value="Other">Other</option>
               </select>
             </label>
 
             <label>
               Message
-              <textarea name="message" rows="6" required></textarea>
+              <textarea name="message" rows="6" placeholder="Tell me a little about what you're looking for..." required></textarea>
             </label>
 
             <button type="submit" class="btn btn-primary">Send Message</button>
@@ -107,13 +108,14 @@
   <!-- Mobile nav JS + Year -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
+
     navToggle.addEventListener('click', () => {
       const isOpen = navLinks.classList.toggle('nav-open');
       navToggle.setAttribute('aria-expanded', isOpen);
     });
   </script>
-
 </body>
 </html>

@@ -39,6 +39,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="prints.html">Prints</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="book.html">Book</a></li>
         </ul>
       </nav>
@@ -48,8 +49,8 @@
       <section class="section">
         <h2>Fine Art Prints</h2>
         <p>
-          Museum-quality prints of my favorite wildlife and scapes.<br>
-          Each limited edition print is produced to order on archival paper and signed.
+          Museum-quality prints of my favorite wildlife and landscapes.<br>
+          Each limited-edition print is produced to order on archival paper and signed.
         </p>
       </section>
 
@@ -60,7 +61,7 @@
           <div class="card">
             <img
               src="img/shortie.jpg"
-              alt="Framed Short-Eared Owl fine art print"
+              alt="Short-Eared Owl fine art print"
               class="print-img"
             />
             <h3>Short-Eared Owl · 13×19</h3>
@@ -80,7 +81,7 @@
           <div class="card">
             <img
               src="img/screech.jpg"
-              alt="Framed Eastern Screech Owl fine art print"
+              alt="Eastern Screech Owl fine art print"
               class="print-img"
             />
             <h3>Eastern Screech Owl · 13×19</h3>
@@ -100,7 +101,7 @@
           <div class="card">
             <img
               src="img/redtail.jpg"
-              alt="Framed Red Tail Hawk fine art print"
+              alt="Red Tail Hawk fine art print"
               class="print-img"
             />
             <h3>Red Tail Hawk · 13×19</h3>
@@ -118,6 +119,21 @@
 
         </div>
       </section>
+
+      <!-- CTA -->
+      <section class="section">
+        <div class="card">
+          <h2>Looking for a Session?</h2>
+          <p>
+            Interested in couples, family, engagement, or headshot photography?
+            View my services and book a session.
+          </p>
+          <div class="hero-buttons">
+            <a href="services.html" class="btn btn-primary">View Services</a>
+            <a href="book.html" class="btn btn-ghost">Book Now</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -125,7 +141,7 @@
     </footer>
   </div>
 
-  <!-- Lightbox overlay for full-screen image view -->
+  <!-- Lightbox overlay -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
     <div class="lightbox-inner">
       <img id="lightbox-img" src="" alt="" />
@@ -136,38 +152,34 @@
     // Set current year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Mobile nav toggle
+    // Mobile nav toggle (matches styles.css)
     const navToggle = document.querySelector(".nav-toggle");
     const navLinks = document.querySelector(".nav-links");
 
     navToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("nav-open");
-      navToggle.setAttribute("aria-expanded", isOpen);
+      navLinks.classList.toggle("nav-open");
+      const isOpen = navLinks.classList.contains("nav-open");
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
     // ---------- Lightbox logic ----------
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
 
-    // Open lightbox on print image click
     document.querySelectorAll(".print-img").forEach((img) => {
       img.addEventListener("click", () => {
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
         lightbox.classList.add("open");
         lightbox.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden"; // prevent background scroll
+        document.body.style.overflow = "hidden";
       });
     });
 
-    // Close when clicking the dark background
     lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
+      if (e.target === lightbox) closeLightbox();
     });
 
-    // Close on Escape key
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && lightbox.classList.contains("open")) {
         closeLightbox();

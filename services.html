@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Services | Explored Lens Photography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QC2S9YYN9E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QC2S9YYN9E');
+  </script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <nav class="site-nav">
+        <div class="logo">Explored Lens Photography</div>
+
+        <!-- Mobile menu toggle button -->
+        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+          ☰
+        </button>
+
+        <!-- Nav links -->
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="prints.html">Prints</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="book.html">Book</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <h2>Photography Services</h2>
+        <p>
+          Simple, competitive pricing with a polished, natural-light look. Every session includes
+          <strong>at least 15 professionally edited digital images</strong> delivered in an online gallery.
+          <strong>Prints and wall art are available for an additional fee.</strong>
+        </p>
+
+        <div class="card">
+          <h2>What’s Included</h2>
+          <p>
+            • 15+ edited digital images (download + share)<br>
+            • Online gallery delivery<br>
+            • Natural-light, true-to-life editing<br>
+            • Print options available (additional fee)
+          </p>
+          <div class="hero-buttons">
+            <a href="book.html" class="btn btn-primary">Book a Session</a>
+            <a href="portfolio.html" class="btn btn-ghost">See Examples</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Packages</h2>
+        <p>Starting prices below — final pricing may vary based on location, travel, and add-ons.</p>
+
+        <div class="grid">
+          <!-- Couples -->
+          <div class="card">
+            <h2>Couples</h2>
+            <p>
+              A relaxed session focused on genuine connection — perfect for anniversaries, date nights,
+              or “just because.” We’ll keep it fun and natural, with light direction and candid moments.
+            </p>
+            <p><strong>Starting at: $275</strong></p>
+            <p>
+              Includes <strong>15+ edited digital images</strong>.
+              <strong>Prints available for an additional fee.</strong>
+            </p>
+            <div class="hero-buttons">
+              <a href="book.html" class="btn btn-primary">Book Couples</a>
+              <a href="portfolio.html" class="btn btn-ghost">View Work</a>
+            </div>
+          </div>
+
+          <!-- Engagement -->
+          <div class="card">
+            <h2>Engagement</h2>
+            <p>
+              Engagement sessions with a cinematic, natural-light feel. Great for save-the-dates,
+              announcements, and building comfort in front of the camera before the big day.
+            </p>
+            <p><strong>Starting at: $325</strong></p>
+            <p>
+              Includes <strong>15+ edited digital images</strong>.
+              <strong>Prints available for an additional fee.</strong>
+            </p>
+            <div class="hero-buttons">
+              <a href="book.html" class="btn btn-primary">Book Engagement</a>
+              <a href="portfolio.html" class="btn btn-ghost">View Work</a>
+            </div>
+          </div>
+
+          <!-- Headshots -->
+          <div class="card">
+            <h2>Headshots</h2>
+            <p>
+              Clean, confident headshots for LinkedIn, business profiles, auditions, or personal branding.
+              We’ll capture a range of looks with quick, efficient direction.
+            </p>
+            <p><strong>Starting at: $175</strong></p>
+            <p>
+              Includes <strong>15+ edited digital images</strong>.
+              <strong>Prints available for an additional fee.</strong>
+            </p>
+            <div class="hero-buttons">
+              <a href="book.html" class="btn btn-primary">Book Headshots</a>
+              <a href="portfolio.html" class="btn btn-ghost">View Work</a>
+            </div>
+          </div>
+
+          <!-- Families -->
+          <div class="card">
+            <h2>Families</h2>
+            <p>
+              Family sessions designed for real smiles and real moments — ideal for yearly updates,
+              maternity, milestones, and seasonal shoots. Kid-friendly pacing and natural prompts.
+            </p>
+            <p><strong>Starting at: $295</strong></p>
+            <p>
+              Includes <strong>15+ edited digital images</strong>.
+              <strong>Prints available for an additional fee.</strong>
+            </p>
+            <div class="hero-buttons">
+              <a href="book.html" class="btn btn-primary">Book Families</a>
+              <a href="portfolio.html" class="btn btn-ghost">View Work</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <h2>Add-ons</h2>
+          <p>
+            • Additional edited images available<br>
+            • Print packages and wall art (additional fee)<br>
+            • Light travel available across Seacoast NH / Southern NH (travel may apply)
+          </p>
+          <div class="hero-buttons">
+            <a href="book.html" class="btn btn-primary">Schedule Now</a>
+            <a href="prints.html" class="btn btn-ghost">Shop Prints</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Explored Lens Photography | Seacoast, NH
+    </footer>
+  </div>
+
+  <script>
+    // Set current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile nav toggle (matches styles.css: .nav-links.nav-open)
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    navToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("nav-open");
+      const isOpen = navLinks.classList.contains("nav-open");
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  </script>
+</body>
+</html>

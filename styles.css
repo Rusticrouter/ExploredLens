@@ -593,15 +593,34 @@ footer {
   line-height: 1.1;
 }
 
-.about-text p {
-  color: var(--muted-2);
-  line-height: 1.95;
-  font-size: 1.025rem;
-  margin-bottom: 1.5rem;
+.about-lede {
+  font-size: 1.125rem;
+  color: var(--text);
+  line-height: 1.9;
+  margin-bottom: 2.5rem;
 }
 
-.about-text p:last-child {
+.bio-block {
+  margin-bottom: 2rem;
+}
+
+.bio-block:last-of-type {
   margin-bottom: 0;
+}
+
+.bio-label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.bio-block p {
+  color: var(--muted-2);
+  line-height: 1.9;
+  font-size: 0.975rem;
 }
 
 .pull-quote {

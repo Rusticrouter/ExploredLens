@@ -9,6 +9,29 @@ navToggle.addEventListener("click", () => {
   navToggle.setAttribute("aria-expanded", isOpen);
 });
 
+// Transparent nav → solid on scroll (hero page only)
+if (document.body.classList.contains("has-hero")) {
+  const header = document.querySelector("header");
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 80);
+  }, { passive: true });
+}
+
+// Scroll reveal
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+
+document.querySelectorAll(".section, .card").forEach(el => {
+  el.classList.add("reveal");
+  revealObserver.observe(el);
+});
+
 // Lightbox
 const lightbox = document.getElementById("lightbox");
 if (lightbox) {

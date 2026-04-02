@@ -23,7 +23,8 @@
   </script>
 </head>
 
-<body>
+<!-- has-hero: makes nav start transparent, JS adds .scrolled on scroll -->
+<body class="has-hero">
   <div class="wrapper">
     <header>
       <nav class="site-nav">
@@ -44,30 +45,34 @@
     </header>
 
     <main>
+      <!-- FULL-BLEED HERO — swap shortie.jpg for any image you prefer -->
       <section class="hero">
-        <div class="hero-text">
+        <div class="hero-bg">
+          <img src="img/shortie.jpg" alt="" aria-hidden="true" />
+        </div>
+        <div class="hero-content">
+          <span class="hero-eyebrow">Seacoast, New Hampshire</span>
           <h1>Wildlife.<br>Portraiture.<br>Landscape.</h1>
           <p>
-            Audubon-featured wildlife and natural-light portrait photographer capturing real people, wild creatures, and breathtaking scenery. From the quiet natural beauty of New England's forests to the genuine expressions shared between families, my work is rooted in authenticity, connection, and the natural world.
+            Audubon-featured wildlife and natural-light portrait photographer
+            capturing real people, wild creatures, and breathtaking scenery.
           </p>
           <div class="hero-buttons">
             <a href="book.html" class="btn btn-primary">Book a Session</a>
             <a href="portfolio.html" class="btn btn-ghost">View Portfolio</a>
           </div>
         </div>
-        <div class="hero-image">
-          <img src="img/logo.jpeg" alt="Explored Lens Photography logo" class="zoom-img" />
-        </div>
       </section>
 
       <section class="section">
         <h2>Featured Work</h2>
         <p>A glimpse into some recent work captured on location.</p>
-        <div class="grid">
-          <img src="img/colt.jpg" alt="Couples portrait" class="zoom-img" loading="lazy" />
-          <img src="img/liz.jpg" alt="Portrait session" class="zoom-img" loading="lazy" />
-          <img src="img/barred_owl.jpg" alt="Barred owl wildlife photography" class="zoom-img" loading="lazy" />
-          <img src="img/forest.jpg" alt="Landscape photography" class="zoom-img" loading="lazy" />
+        <!-- Bento grid: tall left | two stacked center | tall right -->
+        <div class="grid-bento">
+          <img src="img/colt.jpg"        alt="Couples portrait"             class="zoom-img" loading="lazy" />
+          <img src="img/liz.jpg"         alt="Portrait session"             class="zoom-img" loading="lazy" />
+          <img src="img/barred_owl.jpg"  alt="Barred owl wildlife"          class="zoom-img" loading="lazy" />
+          <img src="img/forest.jpg"      alt="Landscape photography"        class="zoom-img" loading="lazy" />
         </div>
       </section>
 
@@ -75,8 +80,9 @@
         <div class="card">
           <h2>Sessions &amp; Prints</h2>
           <p>
-            From heirloom-level family portrait sessions to stunning fine-art wildlife and landscape prints,
-            I create imagery with depth, detail, and an eye for the extraordinary.
+            From heirloom-level family portrait sessions to stunning fine-art wildlife
+            and landscape prints, I create imagery with depth, detail, and an eye for
+            the extraordinary.
           </p>
           <div class="hero-buttons">
             <a href="services.html" class="btn btn-primary">View Services</a>

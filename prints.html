@@ -63,6 +63,7 @@
               src="img/shortie.jpg"
               alt="Short-Eared Owl fine art print"
               class="print-img"
+              loading="lazy"
             />
             <h3>Short-Eared Owl · 13×19</h3>
             <p>Archival matte paper · Signed · Limited run.</p>
@@ -83,6 +84,7 @@
               src="img/screech.jpg"
               alt="Eastern Screech Owl fine art print"
               class="print-img"
+              loading="lazy"
             />
             <h3>Eastern Screech Owl · 13×19</h3>
             <p>Archival matte paper · Signed · Limited run.</p>
@@ -103,6 +105,7 @@
               src="img/redtail.jpg"
               alt="Red Tail Hawk fine art print"
               class="print-img"
+              loading="lazy"
             />
             <h3>Red Tail Hawk · 13×19</h3>
             <p>Archival matte paper · Signed · Limited run.</p>
@@ -148,49 +151,6 @@
     </div>
   </div>
 
-  <script>
-    // Set current year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Mobile nav toggle (matches styles.css)
-    const navToggle = document.querySelector(".nav-toggle");
-    const navLinks = document.querySelector(".nav-links");
-
-    navToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("nav-open");
-      const isOpen = navLinks.classList.contains("nav-open");
-      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-
-    // ---------- Lightbox logic ----------
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-
-    document.querySelectorAll(".print-img").forEach((img) => {
-      img.addEventListener("click", () => {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.classList.add("open");
-        lightbox.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-      });
-    });
-
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && lightbox.classList.contains("open")) {
-        closeLightbox();
-      }
-    });
-
-    function closeLightbox() {
-      lightbox.classList.remove("open");
-      lightbox.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-    }
-  </script>
+  <script src="site.js" defer></script>
 </body>
 </html>

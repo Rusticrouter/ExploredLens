@@ -183,19 +183,6 @@
     </footer>
   </div>
 
-  <script>
-    // Set current year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Mobile nav toggle (matches styles.css: .nav-links.nav-open)
-    const navToggle = document.querySelector(".nav-toggle");
-    const navLinks = document.querySelector(".nav-links");
-
-    navToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("nav-open");
-      const isOpen = navLinks.classList.contains("nav-open");
-      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-  </script>
+  <script src="site.js" defer></script>
 </body>
 </html>

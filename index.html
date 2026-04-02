@@ -17,36 +17,10 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QC2S9YYN9E"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-QC2S9YYN9E');
   </script>
-
-  <style>
-    /* FULLSCREEN LIGHTBOX */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.9);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-      cursor: zoom-out;
-    }
-
-    .lightbox.open {
-      display: flex;
-    }
-
-    .lightbox img {
-      max-width: 95%;
-      max-height: 95%;
-      border-radius: 10px;
-      object-fit: contain;
-      box-shadow: 0 0 40px rgba(0,0,0,0.5);
-    }
-  </style>
 </head>
 
 <body>
@@ -55,12 +29,10 @@
       <nav class="site-nav">
         <div class="logo">Explored Lens Photography</div>
 
-        <!-- Mobile menu toggle button -->
         <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
           ☰
         </button>
 
-        <!-- Nav links -->
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
@@ -76,7 +48,7 @@
         <div class="hero-text">
           <h1>Wildlife.<br>Portraiture.<br>Landscape.</h1>
           <p>
-            Audubon-featured wildlife and natural-light portrait photographer capturing real people, wild creatures, and breathtaking scenery. From the quiet natural beauty of New England’s forests to the genuine expressions shared between families, my work is rooted in authenticity, connection, and the natural world.
+            Audubon-featured wildlife and natural-light portrait photographer capturing real people, wild creatures, and breathtaking scenery. From the quiet natural beauty of New England's forests to the genuine expressions shared between families, my work is rooted in authenticity, connection, and the natural world.
           </p>
           <div class="hero-buttons">
             <a href="book.html" class="btn btn-primary">Book a Session</a>
@@ -92,10 +64,10 @@
         <h2>Featured Work</h2>
         <p>A glimpse into some recent work captured on location.</p>
         <div class="grid">
-          <img src="img/colt.jpg" alt="Couples portrait" class="zoom-img" />
-          <img src="img/liz.jpg" alt="Portrait session" class="zoom-img" />
-          <img src="img/barred_owl.jpg" alt="Barred owl wildlife photography" class="zoom-img" />
-          <img src="img/forest.jpg" alt="Landscape photography" class="zoom-img" />
+          <img src="img/colt.jpg" alt="Couples portrait" class="zoom-img" loading="lazy" />
+          <img src="img/liz.jpg" alt="Portrait session" class="zoom-img" loading="lazy" />
+          <img src="img/barred_owl.jpg" alt="Barred owl wildlife photography" class="zoom-img" loading="lazy" />
+          <img src="img/forest.jpg" alt="Landscape photography" class="zoom-img" loading="lazy" />
         </div>
       </section>
 
@@ -119,24 +91,12 @@
     </footer>
   </div>
 
-  <!-- FULLSCREEN LIGHTBOX -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
-    <img id="lightbox-img" src="" alt="" />
+    <div class="lightbox-inner">
+      <img id="lightbox-img" src="" alt="" />
+    </div>
   </div>
 
-  <script>
-    // Set current year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Mobile nav toggle (matches styles.css)
-    const navToggle = document.querySelector(".nav-toggle");
-    const navLinks = document.querySelector(".nav-links");
-
-    navToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("nav-open");
-      const isOpen = navLinks.classList.contains("nav-open");
-      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-  </script>
+  <script src="site.js" defer></script>
 </body>
 </html>

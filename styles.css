@@ -93,8 +93,7 @@ header {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
   font-size: 1rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: #fff;
   white-space: nowrap;
 }
@@ -108,10 +107,9 @@ header {
 .nav-links a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.55);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
   transition: color 0.2s ease;
   position: relative;
 }
@@ -232,10 +230,9 @@ header {
   padding: 0.8rem 1.85rem;
   border-radius: var(--radius);
   font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.22s ease;
@@ -441,10 +438,9 @@ header {
 footer {
   padding: 2.5rem 0;
   text-align: center;
-  color: var(--muted);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  color: var(--muted-2);
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
   border-top: 1px solid var(--border);
   margin-top: 3rem;
 }
@@ -565,6 +561,106 @@ footer {
   }
 }
 
+/* ABOUT PAGE ------------------------------------------------------------ */
+
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.about-photo-wrap {
+  position: sticky;
+  top: 88px;
+}
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+
+.about-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.75rem;
+  line-height: 1.1;
+}
+
+.about-text p {
+  color: var(--muted-2);
+  line-height: 1.95;
+  font-size: 1.025rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.pull-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+  line-height: 1.45;
+}
+
+.pull-quote::before { content: '\201C'; }
+.pull-quote::after  { content: '\201D'; }
+
+.about-highlights {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.highlight-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.highlight-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.highlight-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+@media (max-width: 860px) {
+  .about-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-photo-wrap {
+    position: static;
+  }
+
+  .about-photo {
+    aspect-ratio: 4 / 3;
+  }
+}
+
 /* CONTACT FORM ---------------------------------------------------------- */
 
 .contact-form {
@@ -575,9 +671,8 @@ footer {
 
 .contact-form label {
   font-weight: 500;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
   color: var(--muted-2);
   display: flex;
   flex-direction: column;

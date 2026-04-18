@@ -17,6 +17,24 @@ if (document.body.classList.contains("has-hero")) {
   }, { passive: true });
 }
 
+// Portfolio filter tabs
+const filterBtns  = document.querySelectorAll(".filter-btn");
+const filterItems = document.querySelectorAll(".filter-item");
+
+if (filterBtns.length) {
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const cat = btn.dataset.filter;
+      filterItems.forEach(img => {
+        img.classList.toggle("hidden", cat !== "all" && img.dataset.category !== cat);
+      });
+    });
+  });
+}
+
 // Scroll reveal
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -25,10 +43,10 @@ const revealObserver = new IntersectionObserver(entries => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+}, { threshold: 0.08, rootMargin: "0px 0px -30px 0px" });
 
-document.querySelectorAll(".section, .card").forEach(el => {
-  el.classList.add("reveal");
+document.querySelectorAll(".section, .card, .service-item, .cred-strip").forEach(el => {
+  if (!el.classList.contains("reveal")) el.classList.add("reveal");
   revealObserver.observe(el);
 });
 

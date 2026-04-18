@@ -5,15 +5,11 @@
   <title>Portfolio · Explored Lens Photography</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
   <link rel="icon" href="favicon.ico">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QC2S9YYN9E"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -28,11 +24,7 @@
     <header>
       <nav class="site-nav">
         <div class="logo">Explored Lens Photography</div>
-
-        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
-          ☰
-        </button>
-
+        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
@@ -45,35 +37,60 @@
     </header>
 
     <main>
+      <section class="section" style="border-top: none; padding-top: 3.5rem;">
+        <div class="section-header">
+          <span class="section-label">The Work</span>
+          <h2>Portfolio</h2>
+          <p>Wildlife, portraits, and landscapes — captured on the Seacoast of New Hampshire and beyond.</p>
+        </div>
 
-      <!-- PORTRAITS ---------------------------------------------------- -->
-      <section class="section">
-        <h2>Portraits</h2>
-        <p>Modern, natural-light portraits for families, couples, and individuals.</p>
+        <!-- Filter tabs -->
+        <div class="filter-tabs" role="tablist">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="portraits">Portraits</button>
+          <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+          <button class="filter-btn" data-filter="landscapes">Landscapes</button>
+        </div>
 
+        <!-- Single unified masonry grid -->
         <div class="grid-masonry">
-          <img src="img/maternity1.jpg" class="zoom-img" alt="Maternity portrait" loading="lazy" />
-          <img src="img/amac.jpg" class="zoom-img" alt="Couples portrait" loading="lazy" />
-          <img src="img/nick1.jpg" class="zoom-img" alt="Individual portrait" loading="lazy" />
-          <img src="img/maternity2.jpg" class="zoom-img" alt="Family maternity portrait" loading="lazy" />
-          <img src="img/sweet.jpg" class="zoom-img" alt="Family portrait" loading="lazy" />
-          <img src="img/pari.jpg" class="zoom-img" alt="Lifestyle portrait" loading="lazy" />
-          <img src="img/grey.jpg" class="zoom-img" alt="Natural light portrait" loading="lazy" />
-          <img src="img/max.jpg" class="zoom-img" alt="Portrait photography" loading="lazy" />
-          <img src="img/halloween.jpg" class="zoom-img" alt="Seasonal portrait" loading="lazy" />
-          <img src="img/b_l.jpg" class="zoom-img" alt="Couples portrait session" loading="lazy" />
-          <img src="img/shoes.jpg" class="zoom-img" alt="Detail portrait" loading="lazy" />
-          <img src="img/van.jpg" class="zoom-img" alt="Environmental portrait" loading="lazy" />
+          <img src="img/maternity1.jpg" class="zoom-img filter-item" data-category="portraits" alt="Maternity portrait" loading="lazy" />
+          <img src="img/shortie.jpg"    class="zoom-img filter-item" data-category="wildlife"  alt="Short-eared owl" loading="lazy" />
+          <img src="img/Sligo.jpg"      class="zoom-img filter-item" data-category="landscapes" alt="Sligo landscape" loading="lazy" />
+          <img src="img/amac.jpg"       class="zoom-img filter-item" data-category="portraits" alt="Couples portrait" loading="lazy" />
+          <img src="img/whiteeye.jpg"   class="zoom-img filter-item" data-category="wildlife"  alt="White-eyed bird" loading="lazy" />
+          <img src="img/abbey.jpg"      class="zoom-img filter-item" data-category="landscapes" alt="Abbey architecture" loading="lazy" />
+          <img src="img/nick1.jpg"      class="zoom-img filter-item" data-category="portraits" alt="Individual portrait" loading="lazy" />
+          <img src="img/wren.jpg"       class="zoom-img filter-item" data-category="wildlife"  alt="Wren bird" loading="lazy" />
+          <img src="img/maternity2.jpg" class="zoom-img filter-item" data-category="portraits" alt="Maternity portrait" loading="lazy" />
+          <img src="img/redtail.jpg"    class="zoom-img filter-item" data-category="wildlife"  alt="Red-tailed hawk" loading="lazy" />
+          <img src="img/moon.jpg"       class="zoom-img filter-item" data-category="landscapes" alt="Moon landscape" loading="lazy" />
+          <img src="img/sweet.jpg"      class="zoom-img filter-item" data-category="portraits" alt="Family portrait" loading="lazy" />
+          <img src="img/towhee.jpg"     class="zoom-img filter-item" data-category="wildlife"  alt="Towhee bird" loading="lazy" />
+          <img src="img/pari.jpg"       class="zoom-img filter-item" data-category="portraits" alt="Lifestyle portrait" loading="lazy" />
+          <img src="img/kinglet.jpg"    class="zoom-img filter-item" data-category="wildlife"  alt="Golden-crowned kinglet" loading="lazy" />
+          <img src="img/river.jpg"      class="zoom-img filter-item" data-category="landscapes" alt="River landscape" loading="lazy" />
+          <img src="img/grey.jpg"       class="zoom-img filter-item" data-category="portraits" alt="Natural light portrait" loading="lazy" />
+          <img src="img/junco.jpg"      class="zoom-img filter-item" data-category="wildlife"  alt="Dark-eyed junco" loading="lazy" />
+          <img src="img/max.jpg"        class="zoom-img filter-item" data-category="portraits" alt="Portrait photography" loading="lazy" />
+          <img src="img/crownheron.jpg" class="zoom-img filter-item" data-category="wildlife"  alt="Crowned heron" loading="lazy" />
+          <img src="img/halloween.jpg"  class="zoom-img filter-item" data-category="portraits" alt="Seasonal portrait" loading="lazy" />
+          <img src="img/nuthatch.jpg"   class="zoom-img filter-item" data-category="wildlife"  alt="Nuthatch bird" loading="lazy" />
+          <img src="img/b_l.jpg"        class="zoom-img filter-item" data-category="portraits" alt="Couples portrait session" loading="lazy" />
+          <img src="img/sparrow.jpg"    class="zoom-img filter-item" data-category="wildlife"  alt="Sparrow bird" loading="lazy" />
+          <img src="img/shoes.jpg"      class="zoom-img filter-item" data-category="portraits" alt="Detail portrait" loading="lazy" />
+          <img src="img/woodpecker.jpg" class="zoom-img filter-item" data-category="wildlife"  alt="Woodpecker bird" loading="lazy" />
+          <img src="img/van.jpg"        class="zoom-img filter-item" data-category="portraits" alt="Environmental portrait" loading="lazy" />
+          <img src="img/kingbird.jpg"   class="zoom-img filter-item" data-category="wildlife"  alt="Kingbird" loading="lazy" />
         </div>
       </section>
 
-      <!-- CTA: PORTRAITS -->
       <section class="section">
         <div class="card">
-          <h2>Book a Portrait Session</h2>
+          <h2>Book a Session</h2>
           <p>
             Interested in couples, engagement, family, or headshot photography?
-            View my services and book a portrait session that fits your style.
+            View my services and book a session that fits your style.
           </p>
           <div class="hero-buttons">
             <a href="services.html" class="btn btn-primary">View Services</a>
@@ -81,41 +98,6 @@
           </div>
         </div>
       </section>
-
-      <!-- WILDLIFE ----------------------------------------------------- -->
-      <section class="section">
-        <h2>Wildlife</h2>
-        <p>A tribute to the wild places and the creatures that define them.</p>
-
-        <div class="grid-masonry">
-          <img src="img/whiteeye.jpg" class="zoom-img" alt="White-eyed bird" loading="lazy" />
-          <img src="img/shortie.jpg" class="zoom-img" alt="Short-eared owl" loading="lazy" />
-          <img src="img/wren.jpg" class="zoom-img" alt="Wren bird" loading="lazy" />
-          <img src="img/redtail.jpg" class="zoom-img" alt="Red-tailed hawk" loading="lazy" />
-          <img src="img/towhee.jpg" class="zoom-img" alt="Towhee bird" loading="lazy" />
-          <img src="img/kinglet.jpg" class="zoom-img" alt="Golden-crowned kinglet" loading="lazy" />
-          <img src="img/junco.jpg" class="zoom-img" alt="Dark-eyed junco" loading="lazy" />
-          <img src="img/crownheron.jpg" class="zoom-img" alt="Crowned heron" loading="lazy" />
-          <img src="img/nuthatch.jpg" class="zoom-img" alt="Nuthatch bird" loading="lazy" />
-          <img src="img/sparrow.jpg" class="zoom-img" alt="Sparrow bird" loading="lazy" />
-          <img src="img/woodpecker.jpg" class="zoom-img" alt="Woodpecker bird" loading="lazy" />
-          <img src="img/kingbird.jpg" class="zoom-img" alt="Kingbird" loading="lazy" />
-        </div>
-      </section>
-
-      <!-- LANDSCAPES --------------------------------------------------- -->
-      <section class="section">
-        <h2>Landscapes</h2>
-        <p>Celebrating the scapes that shape us, from wild horizons to architectural design.</p>
-
-        <div class="grid-masonry">
-          <img src="img/Sligo.jpg" class="zoom-img" alt="Sligo landscape" loading="lazy" />
-          <img src="img/abbey.jpg" class="zoom-img" alt="Abbey architecture" loading="lazy" />
-          <img src="img/moon.jpg" class="zoom-img" alt="Moon landscape" loading="lazy" />
-          <img src="img/river.jpg" class="zoom-img" alt="River landscape" loading="lazy" />
-        </div>
-      </section>
-
     </main>
 
     <footer>
@@ -124,9 +106,7 @@
   </div>
 
   <div id="lightbox" class="lightbox" aria-hidden="true">
-    <div class="lightbox-inner">
-      <img id="lightbox-img" src="" alt="" />
-    </div>
+    <div class="lightbox-inner"><img id="lightbox-img" src="" alt="" /></div>
   </div>
 
   <script src="site.js" defer></script>

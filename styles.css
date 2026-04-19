@@ -52,11 +52,9 @@ main { flex: 1; }
 /* === NAVIGATION ======================================================== */
 
 header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  position: static;
   background: transparent;
-  border-bottom: none;
+  border-bottom: 1px solid var(--border);
   margin: 0 calc(-1 * var(--pad));
   padding: 0 var(--pad);
 }

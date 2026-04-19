@@ -9,13 +9,27 @@ navToggle.addEventListener("click", () => {
   navToggle.setAttribute("aria-expanded", isOpen);
 });
 
-// Transparent nav → solid on scroll (hero page only)
-if (document.body.classList.contains("has-hero")) {
-  const header = document.querySelector("header");
-  window.addEventListener("scroll", () => {
-    header.classList.toggle("scrolled", window.scrollY > 80);
-  }, { passive: true });
-}
+// Hide nav on scroll down, show on scroll up — transparent at top on hero pages
+const header = document.querySelector("header");
+let lastY = 0;
+
+window.addEventListener("scroll", () => {
+  const y = window.scrollY;
+
+  // Transparent ↔ solid (hero pages only)
+  if (document.body.classList.contains("has-hero")) {
+    header.classList.toggle("scrolled", y > 80);
+  }
+
+  // Hide on scroll down, reveal on scroll up (all pages, after 120px)
+  if (y > 120) {
+    header.classList.toggle("nav-hidden", y > lastY);
+  } else {
+    header.classList.remove("nav-hidden");
+  }
+
+  lastY = y;
+}, { passive: true });
 
 // Portfolio filter tabs
 const filterBtns  = document.querySelectorAll(".filter-btn");
